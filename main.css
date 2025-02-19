@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background: #cce7ff; /* Açık mavi arka plan */
+    background: #0033A0; /* Yapı Kredi mavisi */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,8 +15,8 @@ body {
     padding: 25px;
     text-align: center;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.9); /* Subtle white background */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for the container */
+    background-color: rgba(255, 255, 255, 0.9); /* Hafif beyaz arka plan */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Yumuşak gölge */
     transition: background-color 0.3s;
 }
 
@@ -39,12 +39,12 @@ body {
     font-size: 16px;
     cursor: pointer;
     transition: color 0.3s, border-bottom 0.3s;
-    color: #333; /* Default text color */
+    color: #333; /* Varsayılan metin rengi */
 }
 
 .tab.active {
     font-weight: bold;
-    border-bottom: 2px solid #0072ce; /* Blue accent for active tab */
+    border-bottom: 2px solid #0072ce; /* Aktif sekme için mavi vurgu */
 }
 
 .input-group {
@@ -54,7 +54,7 @@ body {
 .input-group input {
     width: 100%;
     padding: 12px;
-    border: 1px solid #ccc; /* Light gray border */
+    border: 1px solid #ccc; /* Açık gri kenarlık */
     border-radius: 5px;
     font-size: 16px;
     box-sizing: border-box;
@@ -107,12 +107,12 @@ body {
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
-    background-color: #66b3ff; /* Light blue color */
+    background-color: #66b3ff; /* Açık mavi renk */
     color: #fff;
 }
 
 .login-button:hover {
-    background-color: #005bb5; /* Darker blue for hover effect */
+    background-color: #005bb5; /* Hover efekti için daha koyu mavi */
 }
 
 .forgot-password {
@@ -143,12 +143,12 @@ body {
 
 @media (prefers-color-scheme: light) {
     body {
-        background-color: #cce7ff; /* Açık mavi arka plan */
+        background-color: #0033A0; /* Yapı Kredi mavisi */
         color: #333;
     }
 
     .container {
-        background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+        background-color: rgba(255, 255, 255, 0.9); /* Hafif şeffaf beyaz arka plan */
     }
 
     .tab {
@@ -190,7 +190,7 @@ body {
 
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: #cce7ff; /* Açık mavi arka plan */
+        background-color: #0033A0; /* Yapı Kredi mavisi */
         color: #fff;
     }
 
