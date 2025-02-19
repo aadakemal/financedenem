@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background: #ffffff; /* Tamamen beyaz arka plan */
+    background: #d1f3d1; /* Light green background similar to TEB */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,36 +11,230 @@ body {
 
 .container {
     width: 90%;
-    max-width: 350px;
-    padding: 20px;
+    max-width: 400px;
+    padding: 25px;
     text-align: center;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.9); /* Subtle white background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for the container */
     transition: background-color 0.3s;
 }
 
-@media (prefers-color-scheme: dark) {
+.logo {
+    margin-bottom: 20px;
+}
+
+.logo img {
+    max-width: 150px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s, border-bottom 0.3s;
+    color: #333; /* Default text color */
+}
+
+.tab.active {
+    font-weight: bold;
+    border-bottom: 2px solid #0072ce; /* Blue accent for active tab */
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.toggle {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #ddd;
+    transition: background-color 0.3s;
+}
+
+.toggle::before {
+    content: "";
+    position: absolute;
+    top: 1px;
+    left: 2px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: 0.3s;
+}
+
+.toggle.active {
+    background-color: #0072ce;
+}
+
+.toggle.active::before {
+    left: 20px;
+}
+
+.login-button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    background-color: #66b3ff; /* Light blue color */
+    color: #fff;
+}
+
+.login-button:hover {
+    background-color: #3399ff; /* Slightly darker blue for hover effect */
+}
+
+.login-button:hover {
+    background-color: #005bb5; /* Darker blue for hover effect */
+}
+
+.forgot-password {
+    display: block;
+    margin-top: 15px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+    color: #0072ce;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+.footer-item {
+    text-align: center;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (prefers-color-scheme: light) {
     body {
-        background: #ffffff; /* Koyu temada da beyaz arka plan */
-        color: #000; /* Yazı rengini siyah yap */
+        background-color: #d1f3d1; /* Light green background */
+        color: #333;
     }
 
     .container {
-        background-color: #ffffff;
+        background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
     }
 
     .tab {
-        color: #000;
+        color: #333;
     }
 
     .tab.active {
-        color: #000;
-        border-color: #000;
+        color: #0072ce;
+        border-color: #0072ce;
     }
 
     .input-group input {
         background-color: #fff;
-        color: #000;
+        color: #333;
         border-color: #ccc;
+    }
+
+    .toggle {
+        background-color: #ddd;
+    }
+
+    .toggle.active {
+        background-color: #0072ce;
+    }
+
+    .login-button {
+        background-color: #0072ce;
+        color: #fff;
+    }
+
+    .forgot-password {
+        color: #0072ce;
+    }
+
+    .footer-item {
+        color: #666;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #d1f3d1; /* Light green background */
+        color: #fff;
+    }
+
+    .container {
+        background-color: #111;
+    }
+
+    .tab {
+        color: #888;
+    }
+
+    .tab.active {
+        color: #fff;
+        border-color: #fff;
+    }
+
+    .input-group input {
+        background-color: #333;
+        color: #fff;
+        border-color: #555;
+    }
+
+    .toggle {
+        background-color: #444;
+    }
+
+    .toggle.active {
+        background-color: #0072ce;
+    }
+
+    .login-button {
+        background-color: #0072ce;
+        color: #fff;
+    }
+
+    .forgot-password {
+        color: #0072ce;
+    }
+
+    .footer-item {
+        color: #aaa;
     }
 }
