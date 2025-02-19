@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #ffffff; /* Tamamen beyaz arka plan */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    width: 90%;
+    max-width: 350px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    transition: background-color 0.3s;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #ffffff; /* Koyu temada da beyaz arka plan */
+        color: #000; /* Yazı rengini siyah yap */
+    }
+
+    .container {
+        background-color: #ffffff;
+    }
+
+    .tab {
+        color: #000;
+    }
+
+    .tab.active {
+        color: #000;
+        border-color: #000;
+    }
+
+    .input-group input {
+        background-color: #fff;
+        color: #000;
+        border-color: #ccc;
+    }
+}

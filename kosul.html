@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kredi Başvuru</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #007bcd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #e6f2ff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo img {
+            max-width: 150%;
+            height: auto;
+            max-height: 550px; /* Telefonlarda çok büyük olmaması için sınırlandırma */
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        select, button {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #007bcd;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #005fa3;
+        }
+
+        /* Mobil uyumlu medya sorgusu */
+        @media screen and (max-width: 600px) {
+            .logo img {
+                max-height: 60px; /* Mobil cihazlarda daha küçük logo boyutu */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="./logo.png" alt="QBN FİNANS Logo">
+        </div>
+        
+        <div class="form-group">
+            <label for="amount">Talep Edilen Tutar</label>
+            <select id="amount" name="amount">
+                <option value="50000">50.000 TL</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="term">Talep Edilen Vade</label>
+            <select id="term" name="term">
+                <option value="12">12 Ay</option>
+                <option value="24">24 Ay</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="deferment">Talep Edilen Erteleme Süresi</label>
+            <select id="deferment" name="deferment">
+                <option value="6">6 Ay Erteleme</option>
+            </select>
+        </div>
+
+        <button onclick="window.location.href='onay.html'">Başvuru Talep Et</button>
+    </div>
+</body>
+</html>

